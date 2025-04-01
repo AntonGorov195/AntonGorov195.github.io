@@ -1,3 +1,41 @@
+:root {
+    --bg-color-soft: #b4d3f5;
+    --bg-color-hard: #25548f;
+}
+body{
+    background-color: var(--bg-color-soft); 
+}
+header{
+    text-align:center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+h1{
+    border-style: solid;
+    border-width: 5px;
+    border-radius:50px;
+    border-color:black;
+    padding: 50px;
+    width:max-content;
+    margin:auto;
+    color: var(--bg-color-soft);
+    background-color: var(--bg-color-hard);
+    text-decoration: underline;
+    font-family: monospace;
+    font-size: 3rem;
+}
+h2 {
+    text-align: center;
+    margin: 0;
+}
+p{
+    display: none;
+}
+article{
+    padding: 4px;
+    background-color: var(--bg-color-hard); 
+    color:var(--bg-color-soft);
+}
 .collapse {
   display: none;
 }

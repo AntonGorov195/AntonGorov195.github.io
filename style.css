@@ -2,6 +2,9 @@
     --bg-color-soft: #b4d3f5;
     --bg-color-hard: #25548f;
 }
+*{
+    box-sizing: border-box;
+}
 body{
     background-color: var(--bg-color-soft); 
 }
@@ -16,14 +19,20 @@ h1{
     border-radius:50px;
     border-color:black;
     padding: 50px;
-    width:max-content;
+    width:fit-content;
     margin:auto;
     color: var(--bg-color-soft);
     background-color: var(--bg-color-hard);
     text-decoration: underline;
     font-family: monospace;
-    font-size: 3rem;
+    font-size: 3em;
 }
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: x-large;
+        padding: 20px;
+    }
+  }
 h2 {
     text-align: center;
     margin: 0;

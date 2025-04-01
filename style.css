@@ -28,9 +28,6 @@ h2 {
     text-align: center;
     margin: 0;
 }
-p{
-    display: none;
-}
 article{
     padding: 4px;
     background-color: var(--bg-color-hard); 

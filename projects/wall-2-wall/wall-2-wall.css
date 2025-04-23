@@ -1,0 +1,9 @@
+canvas {
+  cursor: none;
+}
+span:has(> canvas) {
+    box-sizing: content-box;
+    width:800px;
+    height: 600px;
+    border-radius: 10px;
+}

@@ -1,25 +1,16 @@
-:root {
-  --bg-color-soft: #b4d3f5;
-  --bg-color-hard: #25548f;
-  --bg-color-harder: #122f52;
-}
-@media (prefers-color-scheme: dark){
-    /* :root {
-        --bg-color-soft: #272ac0;
-        --bg-color-hard: #68a5f5;
-        --bg-color-harder: #122f52;
-      } */
-}
+
 * {
   box-sizing: border-box;
 }
 body {
+  margin: 0;
+  padding-top: 30px;
+  height: 100vh;
   background-color: var(--bg-color-soft);
 }
 header {
   text-align: center;
   margin-bottom: 30px;
-  margin-top: 30px;
 }
 h1 {
   border-style: solid;
@@ -52,12 +43,11 @@ button[data-collapse-id] {
   border-color: var(--bg-color-soft);
   border-radius: 10px;
   padding: 7px;
-  font-size: 2rem;
+  font-size: var(--article-font-size);
   color: var(--bg-color-soft);
 }
 article {
   padding: 4px;
-  background-color: var(--bg-color-hard);
   color: var(--bg-color-soft);
 }
 .collapsable {
@@ -73,5 +63,28 @@ article {
   font-size: 1.4rem;
   background-color: var(--bg-color-harder);
   padding: 30px;
-  max-width: 800px;
+  max-width: 900px;
+}
+footer {
+  background-color: var(--bg-color-harder);
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  bottom: 0;
+}
+a {
+  color: var(--a-color);
+}
+a:active {
+  color: var(--a-color-active);
+}
+main {
+  padding: 20px;
+  background-color: var(--bg-color-hard);
+  min-height: 100%;
+  margin: 40px;
+  border-radius: 40px;
+  border-style: dashed;
+  border-width: 10px;
+  border-color: var(--border-color-soft);
 }

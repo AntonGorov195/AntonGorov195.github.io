@@ -1,0 +1,21 @@
+:root {
+    --bg-color-soft: #b4d3f5;
+    --bg-color-hard: #25548f;
+    --bg-color-harder: #122f52;
+    --border-color-soft: rgb(135, 191, 250);
+    --a-color: #a6f2f6;
+    --a-color-active: #e8c549;
+    --article-font-size: 2rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    /* :root {
+          --bg-color-soft: #272ac0;
+          --bg-color-hard: #68a5f5;
+          --bg-color-harder: #122f52;
+        } */
+  }
+  @media screen and (max-width: 600px){
+    :root {
+      --article-font-size: 1.5rem;
+    }
+  }

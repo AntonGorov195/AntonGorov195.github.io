@@ -6,7 +6,9 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Anton Gorov</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='vars.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='common.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
 </head>
 
 <body>
@@ -18,9 +20,28 @@
             <h2 id="about-me"><button data-collapse-id="about-me-p"> Who am I?</button></h2>
             <div id="about-me-p" class="collapsable">
                 <p>
-                    I'm a student at <strong>Holon Institute of Technology(a.k.a HIT)</strong>.
+                    I'm a student at <a href="https://www.hit.ac.il/">Holon Institute of Technology(a.k.a HIT)</a>.
                     It all started when my brother showed me the Unity game engine,
                     and from that point one I've been programming ever since.
+                </p>
+            </div>
+        </article>
+        <article>
+            <h2 id="my-projects"><button data-collapse-id="my-projects-p">My projects</button></h2>
+            <div id="my-projects-p" class="collapsable">
+                <p>
+                    One of my first projects was a small video game called <a href="https://github.com/AntonGorov195/Wall2Wall">Wall2Wall</a>. A tiny game I wrote in over
+                    the weekend in the <a href="https://www.rust-lang.org/">Rust</a> programming language. The Goal of the game is to bounce
+                    the ball from one wall to the other by shooting smaller balls at it.
+                    <br>
+                    <iframe frameborder="0" src="https://itch.io/embed/2265204" width="100%" height="167"><a
+                            href="https://anton-gorov.itch.io/wall-2-wall">Wall 2 Wall by Anton Gorov</a></iframe>
+                </p>
+
+                <p>
+                    Another project I made was <a href="https://github.com/AntonGorov195/EduHITZone">HITEduZone</a>. This
+                    is a website for hosting video courses and has an AI assistant to help summeries. This
+                    project originated by HIT's request. In that project I used <a href="https://go.dev/">Go</a> programming language and <a href="https://htmx.org/">htmx</a>.
                 </p>
             </div>
         </article>
@@ -45,7 +66,9 @@
             </div>
         </article>
     </main>
-    <footer></footer>
+    <footer>
+        <a href="https://github.com/AntonGorov195">GitHub</a>
+    </footer>
 </body>
 <script src="index.js"></script>
 

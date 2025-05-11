@@ -162,10 +162,8 @@ class Ball {
     }
 }
 class WallsSetting {
-    constructor() {
-        /** @type {Color} */
+    constructor(activeColor, inactiveColor) {
         this.activeColor = activeColor;
-        /** @type {Color} */
         this.inactiveColor = inactiveColor;
     }
 }

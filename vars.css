@@ -1,0 +1,31 @@
+:root {
+    --bg-color-soft: #b4d3f5;
+    --bg-color-hard: #314b68;
+    /* --bg-color-harder: #122f52; */
+    --text-color-soft: #9ac8fd;
+    --text-color-hard: #314b68;
+    --text-color-em: #cfe4fc;
+    --border-color-soft: #b4d3f5;
+    --border-color-hard: #314b68;
+    --a-color: #bcddff;
+    --a-color-hover: #c3dcf5;
+    --a-color-active: #f7d371;
+    --a-scale-hover: 1.03;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 2rem;
+    --em-font-size: 1.2em;
+    --p-font-size: 1.2rem;
+    --summary-font-size: 2rem;
+}
+@media (prefers-color-scheme: dark) {
+    /* :root {
+          --bg-color-soft: #272ac0;
+          --bg-color-hard: #68a5f5;
+          --bg-color-harder: #122f52;
+        } */
+}
+@media screen and (max-width: 600px) {
+    :root {
+        --article-font-size: 1.5rem;
+    }
+}

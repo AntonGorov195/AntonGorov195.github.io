@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../vars.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../common.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='wall-2-wall.css'>
+</head>
+
+<body>
+    <h1>Wall 2 Wall</h1>
+    <div style="display: flex; justify-content: center; padding: 20px;">
+        <span style="border-style:solid;border-width:10px; background-color: skyblue;">
+            <canvas id="game-canvas" width="800" height="600"></canvas>
+            <div id="game-ui"
+                style="display:none; background-color: rgb(161, 218, 255); width: 800px; height: 600px;justify-content: center; align-items: center;">
+                <button id="game-reset" style="font-size: 2rem;"> Reset </button>
+            </div>
+        </span>
+    </div>
+    <div id="explanation">
+        <h2> Description</h2>
+        <p>
+            This is a simple game about bouncing the ball from one wall to the other.
+            Each time the main ball(red) hits a green wall, your score goes up.
+            However, if the ball falls out of the game window, you lose.
+            To keep the ball afloat you shoot other balls at it to maintain it up in the air.
+        </p>
+        <h2> What I learned from this </h2>
+        <p>
+            The most interesting thing I learned in this project is physics.
+            More precisely, elastic collision between two dimensional circles.
+            I combined my mathematical skills and problem solving skill to accomplish this.
+            At first I tried a more simple approach.
+        </p>
+        <h2> Things I know about One dimensional Newtonian collision</h2>
+        <ol>
+            <li> The mass of the object doesn't matter, only the ratio. </li>
+            <li> Relativity </li>
+            <li> If fisrt ball has a much larger mass than the second, collision will have minimal impact on the second.</li>
+            <li> If the two ball have same mass, they will swich their velicities. </li>
+            <li> If fisrt ball has a much smaller mass than the second, it will bounce off the second ball</li>
+        </ol>
+        <p>
+            This all means that instead of looking at the masses and velocity, we'll look at the mass ratio and relative velocity.
+        </p>
+    </div>
+    <script src="game/type.js"></script>
+    <script src="game/utils.js"></script>
+    <script src="game/game.js"></script>
+    <script src="game/main.js"></script>
+</body>
+
+</html>

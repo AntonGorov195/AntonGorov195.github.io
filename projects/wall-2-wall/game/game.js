@@ -193,7 +193,7 @@ function ballCollide(ball1, ball2) {
     
     const vel1 = ball1.vel;
     const sv = ball1.vel.subtract(ball2.vel);
-    const fvec = new Vec2(sv.x, sv.y).scale(mr / (mr + 1));
+    const fvec = sv.scale(mr / (mr + 1));
     const rvec = sv.reflect(offsetNorm).scale(1 / (mr + 1));
     
     const ev = fvec.add(rvec)

@@ -188,9 +188,15 @@ function ballCollide(ball1, ball2) {
     }
 
     const m1 = ball1.mass;
-    const v1 = ball1.vel.subtract(ball2.vel);
-
     const m2 = ball2.mass;
     const mr = m1 / m2;
     
+    const vel1 = ball1.vel;
+    const sv = ball1.vel.subtract(ball2.vel);
+    const fvec = new Vec2(sv.x, sv.y).scale(mr / (mr + 1));
+    const rvec = sv.reflect(offsetNorm).scale(1 / (mr + 1));
+    
+    const ev = fvec.add(rvec)
+    ball1.vel = ev.add(ball2.vel)
+    ball2.vel = vel1.scale(m1).add(ball2.vel.scale(m2)).subtract(ball1.vel.scale(m1)).scale( 1 / m2);
 }

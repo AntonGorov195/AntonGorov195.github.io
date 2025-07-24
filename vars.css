@@ -1,7 +1,6 @@
 :root {
-    --bg-color-soft: #b4d3f5;
+    /* --bg-color-soft: #b4d3f5;
     --bg-color-hard: #314b68;
-    /* --bg-color-harder: #122f52; */
     --text-color-soft: #9ac8fd;
     --text-color-hard: #314b68;
     --text-color-em: #cfe4fc;
@@ -15,7 +14,18 @@
     --h2-font-size: 2rem;
     --em-font-size: 1.2em;
     --p-font-size: 1.2rem;
-    --summary-font-size: 2rem;
+    --summary-font-size: 2rem; */
+
+    --bg-color-light: #b4d3f5;
+    --bg-color-dark: #314b68;
+
+    --color-light: #b4d3f5;
+    --color-dark: #314b68;
+    
+    --a-color-light: #bcddff;
+    --a-color-light-hover: #c3dcf5;
+    --a-color-light-active: #f7d371;
+    --a-transition-duration-color: 0.4s;
 }
 @media (prefers-color-scheme: dark) {
     /* :root {

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Double Buffer For Gameplay Logic </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/vars.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/common.css'> -->
+</head>
+
+<body>
+    <h1> Double Buffer For Gameplay Logic WIP!!! </h1>
+    <h2> The Desing Experiment </h2>
+    <p>
+        When making a large and dynamic system, you often end up with mutable data everywhere.
+        Games are one notable examle, you have entities interacting with one another all the time.
+        This can make it hard to reason about the system.
+        In my prefered vision you have an <code>update_entity::proc(e: ^Entity)</code> function.
+        After calling it, the entity is updated until the end of the frame.
+        In practice, this does not work this way.
+        Let's look at an example<sup><a>[1]</a></sup>:
+    </p>
+    <pre>
+        <code>
+update_entities::proc(e: ^Entity) {
+    if e.is_bullet {
+        for e_other in &entities {
+            if e_other.is_player && is_intersect(e, e_other) {
+                e_other.health -= e.damage
+                kill_entity(e)
+            }
+        }
+    }
+}
+        </code>
+    </pre>
+    <p>
+        This is a very common piece of code.
+        There is something I don't like about it.
+        I have the bullet write into another entity.
+        That breaks this function.
+        If you call the function on an entity, the resulting entity might be updated again later by another entity.
+        This can be fine for you but I find pure functions easier to reason about.
+        So let's rewrite it in a way that work as I like.
+    </p>
+    <pre>
+        <code>
+update_entities::proc(e: ^Entity) {
+    if e.is_player {
+        for e_other in &entities {
+            if e_other.is_bullet && is_intersect(e, e_other) {
+                e.health -= e.damage
+            }
+        }
+    }
+    if e.is_bullet {
+        for e_other in &entities {
+            if e_other.is_player && is_intersect(e, e_other) {
+                remove_entity(e)
+            }
+        }
+    }    
+}
+        </code>
+    </pre>
+    <p>
+        In this example, each entity only writes into itself.
+        The player and the bullet each update itself and not the other.
+        To me this is more clear.
+        If the entity is a player update it this way.
+        If the entity is a bullet update it that way.
+        The control flow is very clear (to me).
+        If there is a bug with the player, you know where to look for it,
+        as opposed to the first example where you had to look at the bullet branch as well.
+    </p>
+    <p>
+        You may have noticed the problem by now:
+        if the bullet is updated first, the player won't take damage.
+        This is because the bullet will remove itself before the player takes damage.
+        You may try to come with different systems to fix this, but here is what I came up with.
+    </p>
+    <h2> Double Buffer </h2>
+    <p>
+        Double buffer is a rendering technique where you use two arenas instead of just one.
+        In the context of this article it will refer to
+    </p>
+</body>
+
+</html>

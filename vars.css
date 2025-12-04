@@ -1,9 +1,18 @@
-:root {}
-
-@media (prefers-color-scheme: dark) {
-    :root {}
+:root {
+    --body-bg-color: rgb(229, 242, 253);
+    --main-bg-color: rgb(197, 227, 253);
+    --main-w: 800px;
+    --main-font-size: 1.1rem;
 }
 
-@media screen and (max-width: 600px) {
-    :root {}
+@media (prefers-color-scheme: dark) {
+    :root {
+        
+    }
+}
+@media screen and (max-width: 800px) {
+    :root {
+        --main-w: 100%;
+        --main-font-size: 0.75rem;
+    }
 }

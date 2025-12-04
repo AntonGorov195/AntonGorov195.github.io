@@ -2,3 +2,24 @@
     box-sizing: border-box;
     margin: 0;
 }
+.lang-select {
+    font-size: 1.3rem;
+    background-color: var(--body-bg-color);
+    border: none;
+}
+body {
+    background-image: url("assets/bg.png");
+    background-size: 300px 300px;
+}
+h1 {
+    text-align: center;
+}
+main {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto auto auto;
+    font-size: var(--main-font-size);
+    background-color: var(--main-bg-color);
+    padding: 10px;
+    border-style: dashed;
+}

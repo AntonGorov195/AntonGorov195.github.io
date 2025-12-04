@@ -1,5 +1,6 @@
 main {
-    width: var(--main-w);
+    width: 100%;
+    max-width: 800px;
     margin: auto;
     font-size: var(--main-font-size);
     background-color: var(--main-bg-color);
@@ -7,14 +8,8 @@ main {
     border-style: dashed;
 }
 header {
+    margin: 10px;
     width: 100%;
     display: flex;
     justify-content: center;
-}
-body {
-    background-image: url("assets/bg.png");
-    background-size: 300px 300px;
-}
-h1 {
-    text-align: center;
 }

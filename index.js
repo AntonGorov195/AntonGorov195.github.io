@@ -1,5 +1,3 @@
-
-
 if (languageSelect !== undefined && languageSelect !== null) {
     /**
      * 

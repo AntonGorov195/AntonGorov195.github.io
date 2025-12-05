@@ -27,3 +27,6 @@ main {
 summary {
     font-weight: bold;
 }
+#heMain {
+    direction: rtl;
+}

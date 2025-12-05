@@ -13,13 +13,17 @@ body {
 }
 h1 {
     text-align: center;
+    padding: 10px;
 }
 main {
     width: 100%;
-    max-width: 800px;
+    max-width: 1080px;
     margin: 20px auto auto auto;
     font-size: var(--main-font-size);
     background-color: var(--main-bg-color);
     padding: 10px;
     border-style: dashed;
+}
+summary {
+    font-weight: bold;
 }

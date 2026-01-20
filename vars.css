@@ -1,6 +1,9 @@
 :root {
     --body-bg-color: rgb(229, 242, 253);
     --main-bg-color: rgb(197, 227, 253);
+    --selection-bg-color: rgb(100, 183, 255);
+    --selection-color: rgb(33, 64, 92);
+    --link-color: rgb(13, 134, 240);
     --main-font-size: 1.1rem;
 }
 

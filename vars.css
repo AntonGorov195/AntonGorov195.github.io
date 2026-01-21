@@ -1,6 +1,7 @@
 :root {
     --body-bg-color: rgb(229, 242, 253);
     --main-bg-color: rgb(197, 227, 253);
+    --text-color: rgb(0, 0, 0);
     --selection-bg-color: rgb(100, 183, 255);
     --selection-color: rgb(33, 64, 92);
     --link-color: rgb(13, 134, 240);
@@ -9,11 +10,14 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        
+        --body-bg-color: rgb(20 29 37);
+        --main-bg-color: rgb(35, 54, 73);
+        --text-color: rgb(205, 223, 240);
+        --link-color: rgb(121, 192, 255);
     }
 }
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
     :root {
         --main-font-size: 0.75rem;
     }
-}
+} */

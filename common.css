@@ -218,7 +218,12 @@ template {
     padding: 0;
     box-sizing: border-box;
 }
+ul {
+    list-style: none;
+    padding-left: 5px;
+}
 
+/* et-book */
 @font-face {
     font-family: "/font/et-book";
     src: url("/font/et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot");
@@ -280,388 +285,74 @@ html {
 
 body {
     font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-    color: #111;
     background-color: var(--body-bg-color);
     margin: 0 auto;
-    padding: 0;
-
-    width: 87.5%;
-    max-width: 990px;
-
+    padding-top: 5px;
+    width: 95%;
+    max-width: 1080px;
     counter-reset: sidenote-counter;
 }
 
+anton-header {
+    display: block;
+    width: fit-content;
+    padding: 15px;
+    margin: auto;
+}
+anton-articles {
+    display: block;
+}
 main {
     width: 100%;
     background-color: var(--main-bg-color);
     padding: 10px;
     border-style: dashed;
-    margin-top: 20px;
+    text-align: justify;
 }
 
-@media only screen and (max-width: 1200px) {
-    body {
-        width: 84%;
-        padding-left: 8%;
-        padding-right: 8%;
-    }
-
-    main {
-        width: 100%;
-    }
+/* header {
+    background-color: var(--main-bg-color);
+    padding: 5px;
+    border-style: dashed;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
-/* @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #151515;
-        color: #ddd;
-    }
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    font-size: 1.3rem;
 } */
 
-p,
-dl,
-ol,
-ul {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-}
-
-/* header and footer areas */
-.menu {
-    margin: 1em 0 0 0;
-    padding: 0;
-}
-
-.menu li {
-    list-style-type: none;
-    display: inline;
-    color: #ccc;
-}
-
-.menu li:not(:first-child):before {
-    padding: 0.5em;
-    content: " | ";
-    color: #ccc;
-}
-
-.article-meta {
-    margin: -1em 0 1em 0;
-}
-
-.menu,
-.article-meta,
-footer {
-    text-align: left;
-}
-
-
-.article-meta h2 {
-    margin-top: 0;
-    font-weight: 400;
-}
-
-.article-meta h3 {
-    /*font-size: 1.1em;*/
-    margin: 0.25em 0;
-    color: #444;
-}
-
-@media (prefers-color-scheme: dark) {
-    .article-meta h3 {
-        color: #bbb;
-    }
-}
-
-
-.article-meta .info {
-    margin: 1em 0 1em 0;
-}
-
-.article-meta .info .series {
-    font-weight: 600;
-}
-
-footer {
-    margin: 1em 0 0;
-    padding: 1em 0 2em 0;
-    text-align: left;
-    color: #ccc;
-}
-
-hr {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #fff;
-    margin: 1.5em 0;
-}
-
-@media (prefers-color-scheme: dark) {
-    hr {
-        border-top: 1px solid #888;
-        border-bottom: 1px solid #ddd;
-    }
-}
-
-img,
-iframe,
-video {
-    max-width: 100%;
-}
-
-main {
-    hyphens: auto;
-}
-
-blockquote,
-blockquote>p {
-    font-style: italic;
-}
-
-blockquote {
-    margin: 1em 1em 1em 1em;
-    padding: 0.5em 1em 0.5em 0.5em;
-    text-align: justify-all;
-    border-radius: 4px;
-    font-size: 18px;
-    /*background-color: #f8f8f0;*/
-}
-
-@media (prefers-color-scheme: dark) {
-    blockquote {
-        /*background-color: #333;*/
-    }
-}
-
-
-blockquote p {
-    margin: 0.25em 0.5em !important;
-}
-
-blockquote footer {
-    size: 1.1em;
-    text-align: right;
-    font-style: normal;
-    padding: 0;
-}
-
-@media (prefers-color-scheme: light) {
-    blockquote footer {
-        color: #666;
-    }
-
-}
-
-h1#logo {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-h1#logo a:hover {
-    text-decoration: none;
-}
-
-
-h1,
-h2,
-h3 {
-    /*line-height: 1.2;*/
-    /*margin: 1em 0 0.5em;*/
-}
-
 h1 {
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 8px;
+    font-size: 2.5rem;
+    margin: 0;
+}
+.logo {
+    vertical-align: middle;
+}
+.header-title-container {
+    padding: 5px;
+    margin-left: 10px;
 }
 
-h2 {
-    font-style: italic;
-    font-size: 35px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-}
-
-h3 {
-    font-size: 24px;
-    margin-bottom: 4px;
-}
-
-h4 {
-    font-size: 20px;
-    margin-bottom: 4px;
-}
-
-h1 code,
-h2 code {
-    font-style: normal;
-}
-
-.article-meta h1 {
-    font-size: 2.75em;
-}
-
-
-main p {
-    text-align: justify;
-    text-justify: inter-word;
-    word-wrap: inter-word;
-    overflow-wrap: inter-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
-}
-
-main p:not(:last-child) {
-    margin: 0 0 1em;
-}
-
-main ul,
-main ol {
-    margin-bottom: 1em;
+.main-aside-container {
+    display: flex;
 }
 
 a {
     color: var(--link-color);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-h1 a {
-    color: #333;
-}
-
-@media (prefers-color-scheme: dark) {
-    h1 a {
-        color: #ddd;
-    }
-}
-
-.article-meta h1 a,
-.article-meta h2 a,
-.article-meta h3 a {
-    color: #333;
-}
-
-.article-meta h1 a:hover,
-.article-meta h2 a:hover,
-.article-meta h3 a:hover {
-    color: var(--link-color);
-}
-
-@media (prefers-color-scheme: dark) {
-
-    .article-meta h1 a,
-    .article-meta h2 a,
-    .article-meta h3 a {
-        color: #ddd;
-    }
-}
-
-.article-meta h1 a:hover:before,
-.article-meta h2 a:hover:before,
-.article-meta h3 a:hover:before {
-    content: '§ ';
-    margin-left: -0.75em;
-    display: inline;
-}
-
-
-ul,
-ol {
-    margin-left: 1.5em;
-}
-
-ul.articles {
-    margin-left: 0em;
-}
-
-ul.articles li {
-    list-style-type: none;
-    margin-bottom: 0.5em;
-}
-
-ul.articles .date {
-    color: #666;
-}
-
-@media (prefers-color-scheme: dark) {
-    ul.articles .description {
-        color: #aaa;
-    }
-}
-
-ul.sub-articles li {
-    list-style-type: disc;
-    margin-bottom: 0;
-}
-
-
-h3>time {
-    color: #666;
-}
-
-nav+h1 {
-    margin-top: 0.5em;
-}
-
-
-pre,
-code {
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: 1em;
-    line-height: 1.3;
-    tab-size: 4;
-    word-break: normal;
-    word-spacing: pre;
-    text-align: left;
-    word-wrap: normal;
-    overflow-wrap: normal;
-    overflow: auto;
-    direction: ltr;
-    position: relative;
-}
-
-pre {
-    margin: 1em 0;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    padding: 0.5em 1em;
-    color: #333;
-    background-color: #f7f7f7;
-    position: relative;
-}
-
-p code,
-li code {
-    line-height: 1;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    padding: 1px 3px;
-    color: #333;
-    background-color: #f7f7f7;
-    font-size: 0.85em !important;
-}
-
-@media (prefers-color-scheme: dark) {
-
-    pre,
-    p code,
-    li code {
-        border: 1px solid #000;
-    }
-
-    pre,
-    code,
-    p code,
-    li code {
-        color: #f7f7f7;
-        background-color: #333;
-    }
-}
-
+/* sidenotes (taken from Ginger Bill's website https://www.gingerbill.org) */
 .footnotes ol li {
     margin-left: 1.0em;
     margin-bottom: 0.5em;
@@ -730,10 +421,9 @@ label.sidenote-number:hover {
     clear: both;
     width: 100%;
     padding: 5px;
-    vertical-align: baseline;
     position: relative;
 }
 
-label {
+.sidenote-number {
     cursor: pointer;
 }

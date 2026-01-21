@@ -10,10 +10,12 @@
     <link rel='stylesheet' type='text/css' media='screen' href='/vars.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='/common.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    <script defer src="/common.js"></script>
     <script defer src="/index.js"></script>
 </head>
 
 <body>
+    <anton-header></anton-header>
     <main>
         <h1> Welcome </h1>
         <p>
@@ -76,11 +78,7 @@
             <summary>
                 Articles
             </summary>
-            <ul>
-                <li>
-                    <a href="articles/content-creation/">Be a Creator, Not a Consumer</a>
-                </li>
-            </ul>
+            <anton-articles></anton-articles>
         </details>
     </main>
 </body>

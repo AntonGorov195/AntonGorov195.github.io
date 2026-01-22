@@ -290,6 +290,7 @@ body {
     color: var(--text-color);
     margin: 0 auto;
     padding-top: 5px;
+    padding-bottom: 15px;
     width: 95%;
     max-width: 1080px;
     counter-reset: sidenote-counter;

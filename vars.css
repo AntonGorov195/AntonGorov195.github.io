@@ -11,8 +11,8 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --body-bg-color: rgb(20 29 37);
-        --main-bg-color: rgb(35, 54, 73);
-        --text-color: rgb(205, 223, 240);
+        --main-bg-color: rgb(27, 42, 58);
+        --text-color: rgb(233, 243, 253);
         --link-color: rgb(121, 192, 255);
     }
 }

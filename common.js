@@ -59,7 +59,7 @@ class AntonArticles extends HTMLElement {
     </style>
     <ul>
         <li>
-            <a href="/articles/content-creation/">Be a Creator, Not a Consumer</a>
+            <a href="/articles/content-creation/">Be a Active, Not Just Passive</a>
         </li>
     </ul>
     `;

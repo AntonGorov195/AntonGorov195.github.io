@@ -418,3 +418,7 @@ label.sidenote-number:hover {
 .sidenote-number {
     cursor: pointer;
 }
+
+html {
+    cursor: url("/assets/cursor-pointer.png"), pointer;
+}

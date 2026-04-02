@@ -1,21 +1,23 @@
 :root {
-    --body-bg-color: rgb(229, 242, 253);
-    --main-bg-color: rgb(197, 227, 253);
-    --text-color: rgb(0, 0, 0);
-    --selection-bg-color: rgb(100, 183, 255);
-    --selection-color: rgb(33, 64, 92);
+    --page-bg-color: rgb(212, 230, 245);
+    --bg-color-light: rgb(197, 227, 253);
+    --bg-color-dark: rgb(55, 46, 25);
+    --border-color-light: rgb(255, 255, 255);
+    --border-color-dark: rgb(58, 133, 29);
+    --text-color-dark: rgb(215, 253, 198);
+    --selection-bg-color: rgb(35, 42, 63);
+    --selection-color: rgb(219, 221, 228);
     --link-color: rgb(13, 134, 240);
-    --main-font-size: 1.1rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --body-bg-color: rgb(20 29 37);
         --main-bg-color: rgb(27, 42, 58);
         --text-color: rgb(233, 243, 253);
         --link-color: rgb(121, 192, 255);
     }
-}
+} */
 /* @media screen and (max-width: 800px) {
     :root {
         --main-font-size: 0.75rem;

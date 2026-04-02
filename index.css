@@ -3,3 +3,53 @@ header {
     display: flex;
     justify-content: center;
 }
+.game-card-view {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.game-card {
+    border-style: solid;
+    padding: 5px;
+    text-align: center;
+    /* transition-property: scale; */
+    transition-duration: 0.3s;
+    width: 300px;
+    height: 430px;
+    color: var(--text-color-dark);
+}
+.game-card:hover {
+    scale: 1.01;
+}
+.game-card img {
+    width: 100%;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: gray;
+    border-style: solid;
+}
+.pc-screen-border {
+    border-width: 16px;
+    border-image-slice: 16 16 16 16 fill;
+    border-image-width: 16px 16px 16px 16px;
+    border-image-repeat: round;
+    border-image-source: url(/assets/border-pc-screen.png);
+    color: rgb(0, 255, 0);
+    font-family: 'Courier New', Courier, monospace;
+}
+.cloud-border {
+    border-width: 32px;
+    border-image-slice: 16 16 16 16 fill;
+    border-image-width: 32px 32px 32px 32px;
+    border-image-repeat: round;
+    border-image-source: url(/assets/border-cloud.png);
+    color: rgb(0, 0, 0);
+}
+.nature-border {
+    border-width: 32px 16px 16px 16px;
+    border-image-slice: 32 16 16 16 fill;
+    border-image-width: 32px 16px 16px 16px;
+    border-image-repeat: round;
+    border-image-source: url(/assets/border-nature.png);
+    color: rgb(255, 216, 180);
+}

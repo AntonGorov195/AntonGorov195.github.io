@@ -16,35 +16,44 @@
 
 <body>
     <anton-header></anton-header>
-    <main>
-        <h1 style="text-align: center; padding: 10px;"> Welcome </h1>
-        <p>
-            Hi, my name is <strong>Anton Gorov</strong> and this is my personal page.
-        </p>
-        <details>
-            <summary>About me</summary>
-            <div style="padding-left: 1rem;">
-                <p>
-                    Hi, my name is Anton Gorov.
-                    I've started programming back in 2016 with <a href="https://unity.com/">Unity</a> game engine 5.4.
-                    It was a great time, but I wanted to expand my knowledge.
-                </p>
-            </div>
-        </details>
-        <details>
-            <summary> I usually put effort into customizing my resume for each submission.
-                This is the generic and somewhat longer version of it.</summary>
-            <div>
-                <!-- <iframe src="/assets/generic-en.pdf" width="100%" height="800px">
-                    This browser does not support PDFs. Please download the PDF to view it:
-                    <a href="/assets/generic-en.pdf">Download Resume</a>.
-                </iframe> -->
-            </div>
-        </details>
-        <details>
-            <summary>
-                Projects
-            </summary>
+    <div>
+        <button id="aboutMeButton">ABOUT ME</button>
+        <button id="projectsButton">PROJECTS</button>
+        <button id="articlesButton">ARTICLES</button>
+    </div>
+    <div>
+        <div id="aboutMeContainer" class="nature-border" style="display: none;">
+            <h1>Anton Gorov</h1>
+            <p>
+                Hi, I'm a computer science graduate from <a href="https://www.hit.ac.il">HIT</a>.
+                I'm currently looking for a job as a software developer.
+                I have no experience but I sure do have the will.
+                I've made several project, in my free time.
+                You can go to the projects tab to see the full list.
+                Some of them are playable here in the web browser.
+            </p>
+            <br>
+            <p>
+                I like programming and playing games.
+                Current I'm playing Slay the Spire 2.
+                I would be very happy to play co-op so contact me if you are interested.
+                I'm a very introverted person so don't expect play sessions to last for long.
+                I assure you that I will enjoy them, even if I look very tired after.
+            </p>
+            <br>
+            <p>
+                I also like cats.
+                I have a cat she is the best kitty one can ask for.
+                I will post pictures of here soon.
+            </p>
+            <br>
+            <p>
+                You can contact me at <a href="mailto:antongorov195@gmail.com">antongorov195@gmail.com</a>.
+                Don't be afraid, I'll be glad to talk with you.
+            </p>
+        </div>
+        <div id="projectsContainer" class="pc-screen-border" style="display: none;">
+            <h1>Projects</h1>
             <ul>
                 <li>
                     <a href="projects/wall-2-wall-details/">Wall 2 Wall Arcade Game</a>
@@ -62,21 +71,15 @@
                     <a href="projects/math-fall/">Bad Math Game, Mostly a Wasm Headache</a>
                 </li>
             </ul>
-        </details>
-        <details>
-            <summary>
-                Articles
-            </summary>
-            <anton-articles></anton-articles>
-        </details>
-        <div class="game-card-view">
-            <div class="game-card nature-border">
-                <span>ABOUT ME</span>
-            </div>
-            <div class="game-card pc-screen-border">PROJECTS</div>
-            <div class="game-card cloud-border">ARTICLES</div>
         </div>
-    </main>
+        <div id="articlesContainer" class="cloud-border" style="display: none;">
+            <h1>Articles</h1>
+            <p>
+                I don't have any as of yet.
+                I do have some things to say but I didn't have the time for it yet.
+            </p>
+        </div>
+    </div>
 </body>
 
 </html>

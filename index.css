@@ -74,3 +74,21 @@ header {
     min-height: 500px;
     padding: 10px;
 }
+#aboutMeButton, #projectsButton, #articlesButton {
+    min-width: 300px;
+    min-height: 100px;
+    border-radius: 15px;
+}
+.tabButtonActive {
+    scale: 1.02;
+    background-color: white;
+}
+.tabButtonInactive {
+    scale: 0.98;
+    background-color: gray;
+}
+#navButtonContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}

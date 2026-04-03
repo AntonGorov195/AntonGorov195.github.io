@@ -4,16 +4,19 @@ const panels = [
     projectsContainer,
     articlesContainer,
 ];
-aboutMeButton.addEventListener("click", () => {
-    openPanel(aboutMeContainer)
-})
-projectsButton.addEventListener("click", () => {
-    openPanel(projectsContainer)
-})
-articlesButton.addEventListener("click", () => {
-    openPanel(articlesContainer)
-})
-function openPanel(panel) {
+const buttons = [
+    aboutMeButton,
+    projectsButton,
+    articlesButton,
+];
+buttons.forEach((button, i) => button.addEventListener("click", () => openPanel(i)));
+function openPanel(i) {
+    buttons.forEach((button) => {
+        button.classList.remove("tabButtonActive");
+        button.classList.add("tabButtonInactive");
+    });
+    buttons[i].classList.remove("tabButtonInactive");
+    buttons[i].classList.add("tabButtonActive")
     panels.forEach((panel) => panel.style.display = "none");
-    panel.style.display = "block"
+    panels[i].style.display = "block"
 }

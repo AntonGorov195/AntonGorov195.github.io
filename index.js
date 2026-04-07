@@ -1,9 +1,14 @@
-
+/**
+ * @type {HTMLElement[]}
+ */
 const panels = [
     aboutMeContainer,
     projectsContainer,
     articlesContainer,
 ];
+/**
+ * @type {HTMLButtonElement[]}
+ */
 const buttons = [
     aboutMeButton,
     projectsButton,

@@ -1,3 +1,29 @@
+/**
+ * @typedef {{x: number, y: number}} Vector2Object
+ */
+
+/**
+ * 
+ * @param {*} start 
+ * @param {*} end 
+ * @param {*} t 
+ */
+
+/**
+ * 
+ * @param {number} start 
+ * @param {number} end 
+ * @param {number} t 
+ * @param {(t: number) => number | undefined} f 
+ * @returns {number}
+ */
+function interpolate(start, end, t, f) {
+    if (f === undefined) {
+        f = (t) => t;
+    }
+    const interp = f(t);
+    return start * (1 - interp) + end * interp;
+}
 class AntonHeader extends HTMLElement {
     constructor() {
         super();
@@ -67,3 +93,89 @@ class AntonArticles extends HTMLElement {
 
 customElements.define('anton-header', AntonHeader);
 customElements.define('anton-articles', AntonArticles);
+
+// not in global scope
+function commonMain() {
+    const canvas = document.createElement("canvas");
+    canvas.id = "screenCanvas";
+    document.body.prepend(canvas);
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+
+    const ctx = canvas.getContext("2d");
+    if (ctx === null) {
+        console.error("2d canvas failed")
+        return;
+    }
+    /**
+     * @type {{
+     * start_position: Vector2Object,
+     * end_position:   Vector2Object,
+     * time:           number,
+     * duration:       number,
+     * size:           number,
+     * color:          string,
+     * }[]}
+     */
+    const particles = [];
+    /**
+     * 
+     * @param {number} time delta time, in milliseconds
+     */
+    let lastFrameTime = 0;
+    function UpdateScreenCanvas(time) {
+        const dt = time - lastFrameTime;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = particles.length - 1; i >= 0; i--) {
+            let particle = particles[i];
+            ctx.beginPath();
+            ctx.fillStyle = particle.color;
+            ctx.arc(
+                interpolate(particle.start_position.x, particle.end_position.x, particle.time / particle.duration, Math.sqrt),
+                interpolate(particle.start_position.y, particle.end_position.y, particle.time / particle.duration, Math.sqrt),
+                particle.size,
+                0,
+                2 * Math.PI,
+            )
+            ctx.fill();
+
+            particle.time += dt
+            if (particle.time > particle.duration) {
+                particles.splice(i, 1);
+            }
+        }
+        lastFrameTime = time;
+        requestAnimationFrame(UpdateScreenCanvas);
+    }
+    UpdateScreenCanvas(16);
+
+    window.addEventListener("click", (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+
+        for (let i = 0; i < 50; i += 1) {
+            const angle = Math.random() * Math.PI * 2;
+            particles.push({
+                color: "#ffdb39",
+                duration: interpolate(100, 500, Math.random()),
+                time: 0,
+                size: interpolate(5, 10, Math.random()),
+                start_position: {
+                    x: x,
+                    y: y,
+                },
+                end_position: {
+                    x: x + Math.cos(angle) * (interpolate(10, 100, Math.random())),
+                    y: y + Math.sin(angle) * (interpolate(10, 100, Math.random())),
+                },
+            });
+        }
+    })
+}
+commonMain();

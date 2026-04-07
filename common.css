@@ -357,6 +357,7 @@ ul {
 html {
     font-size: 16px;
     width: 100%;
+    cursor: url(/assets/cursor-default.png) 15 15, auto;
 }
 
 
@@ -366,13 +367,8 @@ body {
     background-color: var(--page-bg-color);
     background-image: url("/assets/bg1.png");
     color: var(--text-color);
-    margin: 0 auto;
-    padding-top: 5px;
-    padding-bottom: 15px;
-    width: 95%;
-    max-width: 1080px;
+
     counter-reset: sidenote-counter;
-    cursor: url(/assets/cursor-default.png) 15 15, auto;
 }
 
 anton-header {
@@ -385,14 +381,11 @@ anton-articles {
     display: block;
 }
 main {
-    width: 100%;
-    background-color: var(--bg-color-light);
-    background-image: url("/assets/bg2.png");
-    border-color: var(--border-color-light);
-    padding: 10px;
-    border-style: solid;
-    border-width: 10px;
-    text-align: justify;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    width: 95%;
+    max-width: 1080px;
 }
 
 h1 {
@@ -459,4 +452,9 @@ ol {
     border-image-repeat: round;
     border-image-source: url(/assets/border-nature.png);
     color: rgb(255, 216, 180);
+}
+#screenCanvas {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
 }

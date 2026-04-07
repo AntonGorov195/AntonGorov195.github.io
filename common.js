@@ -11,7 +11,6 @@ class AntonHeader extends HTMLElement {
             width: 100%;
             background-color: var(--main-bg-color);
             padding: 15px;
-            border-style: dashed;
             font-weight: bold;
             display: flex;
             align-items: center;
@@ -27,16 +26,16 @@ class AntonHeader extends HTMLElement {
         }
     </style>
     <header>
-        <a href="/"><img class="logo" src="/assets/logo-A.png" height="64"></a>
+        <a aria-label="Go to home page" href="/"><img alt="website logo" class="logo" src="/assets/logo-A.png" height="64"></a>
         <div class="header-title-container">
             <h1>
                 Anton Gorov
             </h1>
             <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/articles/">Articles</a></li>
-                    <li><a href="/">Projects</a></li>
+                    <li><a aria-label="Go to home page" href="/">Home</a></li>
+                    <li><a aria-label="Go to articles list page" href="/articles/">Articles</a></li>
+                    <li><a aria-label="Go to projects list page" href="/">Projects</a></li>
                 </ul>
             </nav>
         </div>

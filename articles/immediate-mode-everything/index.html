@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>The Power of Interpolation</title>
+    <link rel="icon" type="image/x-icon" href="/assets/logo-A.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/vars.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/common.css'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='index.css'> -->
+    <script defer src="/common.js"></script>
+    <!-- <script defer src="index.js"></script> -->
+</head>
+
+<body>
+    <anton-header></anton-header>
+    <main>
+        <h1>The Power of Interpolation</h1>
+        <p>
+            This article exploreres the concept of interpolation and how I used it for my sorting animation project.
+        </p>
+        <p>
+            Author: Anton Gorov <br>
+            Date: 22/1/2026 <br>
+            Last Update: 22/1/2026 <br>
+        </p>
+        <p>
+            Immediate vs. Retain is a concept relating to stateful library design.
+            It doesn't apply to stateless libraries or application logic.
+        </p>
+<pre>
+    <code>
+// Retain
+thing := create_thing()
+add_event(&thing, event_handler)
+for ... {
+    step()
+}
+destroy_thing(&thing)
+// Immediate
+
+for ... {
+    begin()
+    do_thing(id)
+    end()
+    event_handler(query_events(id))
+}
+
+    </code>
+</pre>
+        <p>
+            There is data and there is an expression of said data.
+            If you have a UI life bar, the data is the health and the expression is the UI elements which are drawn onto
+            the screen.
+            In a retain mode system, these two have seperate lifetimes, in immediate mode there is a direct relation
+            between them.
+            Here is an example of physics system.
+        </p>
+        <p>
+            There is a gravity field which is active will space is down.
+            In a retain you create a gravity field and then delete it when the space is up.
+            In immediate mode you check if space is down, and do gravity field if true.
+            In this case, the retain mode version is more bug prone than immediate mode.
+            What if the game was paused? Would the space up event still register?
+        </p>
+        <p>
+            Now let's think of complexity.
+            If you have an expression that depends on N data.
+        </p>
+        <hr>
+        <h2>V2</h2>
+        <p>
+            Retain vs. Immediate is library API design.
+            Let's look from the perspective of the library authors and the user perspective.
+        </p>
+        <p>
+            As a library creator, you no longer have to manage the state.
+            Each step is stateless so no need to track lifetimes and such.
+            In practice, caching means you do need to put some work into it.
+        </p>
+        <p>
+            As a library user, you can represent relation between application data and library state more directly.
+        </p>
+        <p>
+            Application data vs. library data.
+            Retain:
+            start -> create app+lib
+            end -> delete app+lib
+            Immediate:
+            app -> lib
+        </p>
+        <h2>V3</h2>
+        <p>
+            Retain vs. Immediate (<abbr>RvsIM</abbr>) mode api design is a rarely discussed.
+            I've first met these concepts in <a href="https://www.youtube.com/watch?v=Z1qyvQsjK5Y">Casey Muratori's GUI lecture</a>.
+            I realized that the same idea can be applied across other systems than just UI.
+            For example, physics, UI, rendering, audio are all places where RvsIM matters.
+        </p>
+        <p>
+            RvsIM is library api design ideas and I will segregate between library user and library author.
+            These ideas doen't apply to application code, only to code for others to use.
+            Also, in this context library just means code written for other people to use.
+            This means that frameworks and engines are also subject to RvsIM.
+        </p>
+        <pre>
+            <code>
+// Retain
+button := create_button()
+button.on_click = ...
+...
+destroy_button(&button)
+// Immediate
+do_button({
+    id,
+    position = ...,
+})
+if is_click(id) {
+    on_click()
+}
+            </code>
+        </pre>
+        <p>
+            Retain mode: you have initial state, and you modify it other time.
+            Immediate mode: you have data and you map it to state of the library.
+        </p>
+        <p>
+            Retain mode libraries: Unity/Godot game engines, HTML, Box2D, Raylib audio.
+            Immediate mode: React, Dear IMGUI, Raylib drawing.
+        </p>
+    </main>
+</body>
+
+</html>

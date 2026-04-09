@@ -30,7 +30,7 @@
             Immediate vs. Retain is a concept relating to stateful library design.
             It doesn't apply to stateless libraries or application logic.
         </p>
-<pre>
+        <pre>
     <code>
 // Retain
 thing := create_thing()
@@ -94,7 +94,8 @@ for ... {
         <h2>V3</h2>
         <p>
             Retain vs. Immediate (<abbr>RvsIM</abbr>) mode api design is a rarely discussed.
-            I've first met these concepts in <a href="https://www.youtube.com/watch?v=Z1qyvQsjK5Y">Casey Muratori's GUI lecture</a>.
+            I've first met these concepts in <a href="https://www.youtube.com/watch?v=Z1qyvQsjK5Y">Casey Muratori's GUI
+                lecture</a>.
             I realized that the same idea can be applied across other systems than just UI.
             For example, physics, UI, rendering, audio are all places where RvsIM matters.
         </p>
@@ -128,6 +129,52 @@ if is_click(id) {
         <p>
             Retain mode libraries: Unity/Godot game engines, HTML, Box2D, Raylib audio.
             Immediate mode: React, Dear IMGUI, Raylib drawing.
+        </p>
+        <p>
+            How should I structure this?
+            - give some context
+            - explain it is library API thing
+            - give libraries example
+            - code snippit
+            - explain immediate
+            - explain retain
+            - stateless/ stateful
+            - Compare them
+            - conclude
+        </p>
+        <h2>V4</h2>
+        <p>
+            <!-- Explain why it matters -->
+            The dichotomy between retain mode and immediate mode is something I don't see discussed much.
+            When it is discussed it often refers to UI, when retain vs. immediate is a much greater subject.
+            Understanding it will give more tools as a programmer and recontextualize existing ideas.
+        </p>
+        <p>
+            <!-- What it isn't -->
+            First, retain vs. immediate is not about application design, it is a library design concept.
+            However, as an application developer (someone who develops code for users) is important to know it.
+            As library developer (someone who develops code for other programmers), the two approaches are fundamental
+            to library design.
+        </p>
+        <p>
+            <!-- What is retain -->
+            Retain mode API is one where the library is a (stateful) data structure.
+            When dealing with retained libraries you modify that data structure and then compute a result.
+            For example, <a>WebAPI</a>.
+            You have the <a>DOM</a> and you interact by modifying it.
+            Then the web browser computes and renders it on screen.
+            Another example is <a>Box2D</a>, where <a>World</a> is the data structure and compute is <a>Step</a>.
+        </p>
+        <p>
+            <!-- What is immediate -->
+            Immediate mode API is a stateless API where the compute function is independant of the previous.
+            When dealing with immediate mode libraries you give all the data the library needs before each call to the compute function.
+            For example, <a>Dear ImGui</a>.
+            You call <a><samp>ImGui::Begin</samp></a>, declare your the your UI, then call <a><samp>ImGui::End</samp></a>.
+            Each Begin+End scope is independant from the previous one.
+            Another example is <a>React</a>.
+            I know <a><samp>useState</samp></a> may suggest it is stateful but let me explain.
+            
         </p>
     </main>
 </body>

@@ -156,26 +156,26 @@ function commonMain() {
     UpdateScreenCanvas(16);
 
     window.addEventListener("click", (event) => {
-        const x = event.clientX;
-        const y = event.clientY;
-
-        for (let i = 0; i < 50; i += 1) {
-            const angle = Math.random() * Math.PI * 2;
-            particles.push({
-                color: "#ffdb39",
-                duration: interpolate(100, 500, Math.random()),
-                time: 0,
-                size: interpolate(5, 10, Math.random()),
-                start_position: {
-                    x: x,
-                    y: y,
-                },
-                end_position: {
-                    x: x + Math.cos(angle) * (interpolate(10, 100, Math.random())),
-                    y: y + Math.sin(angle) * (interpolate(10, 100, Math.random())),
-                },
-            });
-        }
+        // DISABLED
+        // const x = event.clientX;
+        // const y = event.clientY;
+        // for (let i = 0; i < 50; i += 1) {
+        //     const angle = Math.random() * Math.PI * 2;
+        //     particles.push({
+        //         color: "#ffdb39",
+        //         duration: interpolate(100, 500, Math.random()),
+        //         time: 0,
+        //         size: interpolate(5, 10, Math.random()),
+        //         start_position: {
+        //             x: x,
+        //             y: y,
+        //         },
+        //         end_position: {
+        //             x: x + Math.cos(angle) * (interpolate(10, 100, Math.random())),
+        //             y: y + Math.sin(angle) * (interpolate(10, 100, Math.random())),
+        //         },
+        //     });
+        // }
     })
 }
 commonMain();
